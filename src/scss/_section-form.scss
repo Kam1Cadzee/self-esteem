@@ -1,14 +1,4 @@
 
-html {
-  @include media($b-md) {
-    font-size: 13px;
-  }
-
-  @include media($b-sm) {
-    font-size: 9px;
-  }
-}
-
 .section-form {
   @include col();
   @include make-col(6);
@@ -69,12 +59,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-
-
 }
 .section-present {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0;
   position: relative;
 
   @include media($b-lg) {
@@ -127,18 +114,24 @@ html {
 .info {
   display: flex;
   align-items: center;
-  padding-bottom: 30px;
-  img {
-    padding-left: 40px;
-    padding-right: 20px;
+  padding-bottom: 40px;
 
-    @include media($b-sm) {
-      padding: 0;
-    }
-  }
   @include media($b-sm) {
     flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
+  }
+}
+.date {
+  padding-left: 40px;
+
+  @include media($b-sm) {
+    padding: 0;
+  }
+  display: flex;
+  align-items: center;
+  img {
+    padding-right: 20px;
   }
 }
 

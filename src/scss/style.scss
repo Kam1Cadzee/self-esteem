@@ -18,3 +18,14 @@
   @include row();
 }
 
+
+html {
+  @include media($b-md) {
+    font-size: 13px;
+  }
+
+  @include media($b-sm) {
+    font-size: 9px;
+  }
+}
+
