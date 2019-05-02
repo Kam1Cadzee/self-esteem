@@ -1,0 +1,55 @@
+.section-want {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: #f4f8ff;
+  box-shadow: 0 13px 128px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    font-size: 50px;
+    color: $primary-color;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 36px;
+    color: $primary-color;
+    text-align: center;
+
+    & span {
+      color: $active-color;
+    }
+  }
+  &__button {
+    font-size: 24px;
+    padding: 30px 60px;
+    margin: auto;
+
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.section-want__list {
+  counter-reset: counter-name;
+  max-width: 600px;
+
+  & .list__item {
+    counter-increment: counter-name;
+    padding-bottom: 20px;
+
+    &::before {
+      content: counter(counter-name);
+      font-family: $font-roboto;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    & span {
+      font-weight: 700;
+    }
+  }
+}

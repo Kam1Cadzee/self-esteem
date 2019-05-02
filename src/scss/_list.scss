@@ -1,0 +1,20 @@
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 80px;
+
+  padding-top: 40px;
+  &__item {
+    position: relative;
+
+    &::before {
+      color: $active-color;
+      margin-right: 30px;
+      position: absolute;
+      left: -40px;
+      top: -5px;
+    }
+    text-transform: none;
+    font-size: 26px;
+  }
+}

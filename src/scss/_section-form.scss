@@ -1,0 +1,148 @@
+.section-form {
+  @include col();
+  @include make-col(6);
+  &__title {
+    font-size: 80px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+
+    & span {
+      position: relative;
+
+      &::before {
+        content: url('./../img/crown.png');
+        position: absolute;
+        top: -45px;
+        left: -20px;
+      }
+    }
+
+    &::after {
+      content: '';
+      border: 1px solid $active-color;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 90%;
+      margin: auto;
+      bottom: 0;
+    }
+  }
+  &__subtitle {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+.wrp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.section-present {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+
+.present {
+  border: 1px solid #000;
+  position: relative;
+
+  & div {
+
+    &:nth-child(1) {
+      width: 500px;
+      position: relative;
+      top: 100px;
+      z-index: 1;
+
+    }
+    &:nth-child(2) {
+      width: 500px;
+      position: absolute;
+      top: 0;
+      left: 250px;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: rgba(134, 163, 250, .3);
+    border-radius: 50%;
+    top: 70px;
+    left: -40px;
+    z-index: -1;
+
+  }
+  img {
+    width: 100%;
+  }
+}
+
+
+.info {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+  img {
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+}
+
+
+.form {
+  background-color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px;
+  max-width: 480px;
+
+  &__title {
+    color: $primary-color;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0;
+  }
+  &__subtitle {
+    text-transform: lowercase;
+    text-align: center;
+    margin: 0 40px;
+    margin-bottom: 20px;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  & input {
+    font-family: $font-roboto;
+
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    min-width: 350px;
+  }
+
+  &__button {
+    font-size: 28px;
+    margin-top: 10px;
+  }
+}
