@@ -15,6 +15,9 @@
       top: -5px;
     }
     text-transform: none;
-    font-size: 26px;
+    font-size: 1.625rem;
+  }
+  @include media($b-sm) {
+    padding: 10px;
   }
 }

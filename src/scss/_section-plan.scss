@@ -1,25 +1,29 @@
 .section-plan {
+  padding: 50px 0;
   & .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-
   background-color: #fffafa;
 
   &__title {
-    font-size: 50px;
+    font-size: 3.125rem;
     color: #36373c;
     text-align: center;
-
+    @include media($b-sm) {
+      font-size: 2rem;
+    }
   }
   &__subtitle {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: $active-color;
     font-weight: 700;
     text-align: center;
-
+    @include media($b-sm) {
+      font-size: 1.5rem;
+    }
   }
 
   &__row {
@@ -32,10 +36,13 @@
   }
 
   &__button {
-    font-size: 30px;
+    font-size: 1.875rem;
     border-radius: 5px;
     padding: 25px 70px;
 
+    @include media($b-sm) {
+      padding: 10px 20px;
+    }
     &_active {
       background-image: linear-gradient(to top, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 100%);
     }
@@ -48,10 +55,12 @@
 }
 
 .section-plan__list {
-  max-width: 480px;
+  max-width: 450px;
+
+
 
   & .list__item {
-    font-size: 26px;
+    font-size: 1.625rem;
     margin-bottom: 40px;
     line-height: 1.6em;
 

@@ -1,14 +1,36 @@
+
+html {
+  @include media($b-md) {
+    font-size: 13px;
+  }
+
+  @include media($b-sm) {
+    font-size: 9px;
+  }
+}
+
 .section-form {
   @include col();
   @include make-col(6);
+
+  @include media($b-xl) {
+    @include make-col(9);
+  }
+  @include media($b-lg) {
+    @include make-col(11);
+  }
+
   &__title {
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 700;
     padding-bottom: 20px;
     position: relative;
     display: inline-block;
     text-align: center;
 
+    @include media($b-sm) {
+      font-size: 3rem;
+    }
     & span {
       position: relative;
 
@@ -17,6 +39,13 @@
         position: absolute;
         top: -45px;
         left: -20px;
+
+        @include media($b-md) {
+          top: -35px;
+        }
+        @include media($b-sm) {
+          top: -55px;
+        }
       }
     }
 
@@ -32,7 +61,7 @@
     }
   }
   &__subtitle {
-    font-size: 30px;
+    font-size: 1.875rem;
     text-align: center;
   }
 }
@@ -41,28 +70,36 @@
   align-items: center;
   justify-content: center;
 
+
 }
 .section-present {
   padding-top: 50px;
   padding-bottom: 50px;
+  position: relative;
 
+  @include media($b-lg) {
+    justify-content: center;
+  }
 }
 
 .present {
-  border: 1px solid #000;
-  position: relative;
+  @include media($b-lg) {
+    display: none;
+  }
+  position: absolute;
+  right: 200px;
+  bottom: 0;
+  z-index: -1;
 
   & div {
+    width: 500px;
 
     &:nth-child(1) {
-      width: 500px;
       position: relative;
       top: 100px;
       z-index: 1;
-
     }
     &:nth-child(2) {
-      width: 500px;
       position: absolute;
       top: 0;
       left: 250px;
@@ -94,6 +131,14 @@
   img {
     padding-left: 40px;
     padding-right: 20px;
+
+    @include media($b-sm) {
+      padding: 0;
+    }
+  }
+  @include media($b-sm) {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -103,15 +148,39 @@
   display: flex;
   flex-direction: column;
   margin: auto;
+  position: relative;
 
   border-radius: 5px;
   box-sizing: border-box;
   padding: 20px;
   max-width: 480px;
+  margin-top: 60px;
+
+  &::before {
+    content: url('./../img/gift.png');
+    position: absolute;
+    top: 40px;
+    left: -80px;
+
+    @include media($b-md) {
+     transform: scale(.6);
+      top: -80px;
+      left: -30px;
+    }
+  }
+  &::after {
+    content: url('./../img/arrow@5x.png');
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    @include media($b-md) {
+      display: none;
+    }
+  }
 
   &__title {
     color: $primary-color;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
     margin-top: 0;
@@ -127,22 +196,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
 
   & input {
     font-family: $font-roboto;
-
     border: none;
     border-radius: 2px;
     margin-bottom: 10px;
     padding: 10px;
     padding-left: 20px;
-    min-width: 350px;
+    max-width: 350px;
+    min-width: 200px;
   }
 
+
   &__button {
-    font-size: 28px;
+    font-size: 1.75rem;
     margin-top: 10px;
   }
 }

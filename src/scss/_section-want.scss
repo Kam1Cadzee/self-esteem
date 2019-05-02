@@ -2,18 +2,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  padding: 50px 0;
   background-color: #f4f8ff;
   box-shadow: 0 13px 128px rgba(0, 0, 0, 0.1);
+  position: relative;
 
   &__title {
-    font-size: 50px;
+    font-size: 3.125rem;
     color: $primary-color;
     text-align: center;
   }
 
   &__subtitle {
-    font-size: 36px;
+    font-size: 2.25rem;
     color: $primary-color;
     text-align: center;
 
@@ -22,16 +23,32 @@
     }
   }
   &__button {
-    font-size: 24px;
+    font-size: 1.5rem;
     padding: 30px 60px;
     margin: auto;
+    @include media($b-sm) {
+      padding: 10px 20px;
+    }
+  }
 
+  @include media($b-lg) {
+    padding: 50px;
   }
 }
 
 .main {
   display: flex;
   justify-content: center;
+  z-index: 3;
+
+
+  img {
+    z-index: 1;
+    @include media($b-md) {
+      display: none;
+    }
+  }
+
 }
 
 .section-want__list {
@@ -45,11 +62,34 @@
     &::before {
       content: counter(counter-name);
       font-family: $font-roboto;
-      font-size: 30px;
+      font-size: 1.875rem;
       font-weight: 700;
     }
     & span {
       font-weight: 700;
     }
   }
+}
+
+
+.circle-1 {
+  @include circle(10vw, #006cff);
+  top: 50px;
+  left: 250px;
+}
+.circle-2 {
+   @include circle(24vw, #006cff);
+  top: 350px;
+  left: 10px;
+ }
+.circle-3 {
+  @include circle(14vw, #006cff);
+  top: 150px;
+  right: 100px;
+
+}
+.circle-4 {
+  @include circle(8vw, #006cff);
+  bottom: 150px;
+  right: 70px;
 }
