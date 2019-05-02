@@ -189,10 +189,22 @@
   &::after {
     content: url('./../img/arrow@5x.png');
     position: absolute;
-    top: 20px;
+    top: 70px;
     right: -20px;
+
+    @include media($b-xxl) {
+      top: 50px;
+      right: -40px;
+    }
     @include media($b-md) {
-      display: none;
+      top: 40px;
+      right: -10px;
+      transform: scale(.8);
+    }
+    @include media($b-sm) {
+      top: 20px;
+      right: -10px;
+      transform: scale(.6);
     }
   }
 
