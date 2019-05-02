@@ -1,10 +1,14 @@
-
 .section-form {
   @include col();
-  @include make-col(6);
+  @include make-col(7);
+
+
+  @include media($b-xxl) {
+    @include make-col(6);
+  }
 
   @include media($b-xl) {
-    @include make-col(9);
+    @include make-col(8);
   }
   @include media($b-lg) {
     @include make-col(11);
@@ -17,6 +21,7 @@
     position: relative;
     display: inline-block;
     text-align: center;
+    margin: 0;
 
     @include media($b-sm) {
       font-size: 3rem;
@@ -74,12 +79,27 @@
     display: none;
   }
   position: absolute;
-  right: 200px;
+
+  @include media($b-xxl) {
+    right: 300px;
+  }
+  @include media($b-xl) {
+    right: 200px;
+  }
+  right: 400px;
   bottom: 0;
   z-index: -1;
 
   & div {
-    width: 500px;
+
+    @include media($b-xxl) {
+      width: 500px;
+    }
+    @include media($b-xl) {
+      width: 450px;
+    }
+
+    width: 550px;
 
     &:nth-child(1) {
       position: relative;
@@ -114,7 +134,7 @@
 .info {
   display: flex;
   align-items: center;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 
   @include media($b-sm) {
     flex-direction: column;
@@ -145,8 +165,13 @@
 
   border-radius: 5px;
   box-sizing: border-box;
-  padding: 20px;
-  max-width: 480px;
+  padding: 40px;
+  max-width: 650px;
+
+  @include media($b-xxl) {
+    max-width: 480px;
+  }
+
   margin-top: 60px;
 
   &::before {
@@ -176,7 +201,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
-    margin-top: 0;
+    margin: 0;
   }
   &__subtitle {
     text-transform: lowercase;
@@ -189,6 +214,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include media($b-sm) {
+      align-items: stretch;
+    }
   }
 
   & input {
@@ -198,8 +226,11 @@
     margin-bottom: 10px;
     padding: 10px;
     padding-left: 20px;
-    max-width: 350px;
-    min-width: 200px;
+    min-width: 350px;
+    @include media($b-sm) {
+      min-width: 0;
+    }
+
   }
 
 
