@@ -393,7 +393,8 @@
       color: #5b5b5b; }
 
 .section-plan__list {
-  max-width: 650px; }
+  max-width: 650px;
+  box-sizing: border-box; }
   .section-plan__list .list__item {
     font-size: 1.625rem;
     margin-bottom: 40px;

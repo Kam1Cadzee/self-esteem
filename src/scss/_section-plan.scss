@@ -55,6 +55,7 @@
 
 .section-plan__list {
   max-width: 650px;
+  box-sizing: border-box;
 
   & .list__item {
     font-size: 1.625rem;
